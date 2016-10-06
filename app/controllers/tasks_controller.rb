@@ -5,7 +5,9 @@ class TasksController < ApplicationController
 
   def index
     # @tasks = Task.all
-    @tasks = current_user.task
+    @to_do = current_user.tasks.where(state: "to_do")
+    @doing = current_user.tasks.where(state: "doing")
+    @done = current_user.tasks.where(state: "done")
     respond_with(@tasks)
   end
 
@@ -23,7 +25,7 @@ class TasksController < ApplicationController
 
   def create
     # @task = Task.new(task_params)
-    @task = current_user.taks.new(task_params)
+    @task = current_user.tasks.new(task_params)
     @task.save
     respond_with(@task)
   end
@@ -44,6 +46,6 @@ class TasksController < ApplicationController
     end
 
     def task_params
-      params.require(:task).permit(:content)
+      params.require(:task).permit(:content, :state)
     end
 end

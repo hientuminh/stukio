@@ -1,58 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>To do</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>State</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @to_do.each do |task| %>
+<div class="row">
+  
+  <div class="col-md-4">
+    <h1 class="text-center">Todo</h1>
     <%= render @to_do %>
-    <% end %>
-  </tbody>
-</table>
+  </div>
 
-<h1>Doing</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>State</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @doing.each do |task| %>
+  <div class="col-md-4">
+    <h1 class="text-center">Doing</h1>
     <%= render @doing %>
-    <% end %>
-  </tbody>
-</table>
+  </div>
 
-<h1>Done</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>State</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @done.each do |task| %>
+  <div class="col-md-4">
+    <h1 class="text-center">Done</h1>
     <%= render @done %>
-    <% end %>
-  </tbody>
-</table>
+  </div>
+  
+
+</div>
 
 <br>
 

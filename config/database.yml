@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -47,8 +47,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: stukdo_production
-  username: stukdo
-  password: <%= ENV['STUKDO_DATABASE_PASSWORD'] %>
+production: &default
+  adapter: postgresql
+  database: todoism
+  encoding: utf8
+  min_messages: warning
+  pool: 5
+  timeout: 5000
